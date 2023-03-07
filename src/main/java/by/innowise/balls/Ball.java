@@ -1,8 +1,6 @@
 package by.innowise.balls;
 
-
 import by.innowise.enums.Color;
-
 import java.util.Objects;
 
 public abstract class Ball {
