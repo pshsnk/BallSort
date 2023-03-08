@@ -1,17 +1,20 @@
-package by.innowise.basket;
+package by.innowise.services;
 
+import by.innowise.basket.Basket;
 import by.innowise.models.*;
-import by.innowise.enums.ColorOrder;
+import by.innowise.orders.ColorOrder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
-class BasketTest {
-    private  ArrayList<Ball> actualBalls;
+class SortServiceTest {
+
+    private List<Ball> actualBalls;
     private static Basket basket;
 
     @BeforeAll
@@ -28,7 +31,7 @@ class BasketTest {
                 new TennisBall(22, ColorOrder.BLACK, 25),
                 new HandballBall(15, ColorOrder.PINK, 30)
         ));
-        basket.setBalls(actualBalls);
+        basket.setBallList(actualBalls);
     }
 
 
@@ -41,8 +44,8 @@ class BasketTest {
                 new FootballBall(12, ColorOrder.GREEN, 40),
                 new VolleyballBall(10, ColorOrder.ORANGE, 90)
         ));
-        basket.mergeSortByPrice();
-        actualBalls=basket.getBalls();
+        SortService.mergeSortByPrice(actualBalls);
+        actualBalls=basket.getBallList();
         Assertions.assertEquals(expectedBalls, actualBalls);
     }
 
@@ -55,8 +58,8 @@ class BasketTest {
                 new TennisBall(22, ColorOrder.BLACK, 25),
                 new BasketballBall(25, ColorOrder.YELLOW, 35)
         ));
-        basket.mergeSortBySize();
-        actualBalls=basket.getBalls();
+        SortService.mergeSortBySize(actualBalls);
+        actualBalls=basket.getBallList();
         Assertions.assertEquals(expectedBalls, actualBalls);
     }
 
@@ -70,8 +73,8 @@ class BasketTest {
                 new VolleyballBall(10, ColorOrder.ORANGE, 90)
 
         ));
-        basket.mergeSortByClassType();
-        actualBalls=basket.getBalls();
+        SortService.mergeSortByClassType(actualBalls);
+        actualBalls=basket.getBallList();
         Assertions.assertEquals(expectedBalls, actualBalls);
     }
 
@@ -85,8 +88,8 @@ class BasketTest {
                 new VolleyballBall(10, ColorOrder.ORANGE, 90)
 
         ));
-        basket.mergeSortByColor();
-        actualBalls=basket.getBalls();
+        SortService.mergeSortByColor(actualBalls);
+        actualBalls=basket.getBallList();
         Assertions.assertEquals(expectedBalls, actualBalls);
     }
 
@@ -99,8 +102,8 @@ class BasketTest {
                 new FootballBall(12, ColorOrder.GREEN, 40),
                 new VolleyballBall(10, ColorOrder.ORANGE, 90)
         ));
-        basket.quickSortByPrice();
-        actualBalls=basket.getBalls();
+        SortService.quickSortByPrice(actualBalls);
+        actualBalls=basket.getBallList();
         Assertions.assertEquals(expectedBalls, actualBalls);
     }
 
@@ -113,8 +116,8 @@ class BasketTest {
                 new TennisBall(22, ColorOrder.BLACK, 25),
                 new BasketballBall(25, ColorOrder.YELLOW, 35)
         ));
-        basket.quickSortBySize() ;
-        actualBalls=basket.getBalls();
+        SortService.quickSortBySize(actualBalls);
+        actualBalls=basket.getBallList();
         Assertions.assertEquals(expectedBalls, actualBalls);
     }
 
@@ -128,8 +131,8 @@ class BasketTest {
                 new VolleyballBall(10, ColorOrder.ORANGE, 90)
 
         ));
-        basket.quickSortByClassType();
-        actualBalls=basket.getBalls();
+        SortService.quickSortByClassType(actualBalls);
+        actualBalls=basket.getBallList();
         Assertions.assertEquals(expectedBalls, actualBalls);
     }
 
@@ -143,9 +146,8 @@ class BasketTest {
                 new VolleyballBall(10, ColorOrder.ORANGE, 90)
 
         ));
-        basket.quickSortByColor();
-        actualBalls=basket.getBalls();
+        SortService.quickSortByColor(actualBalls);
+        actualBalls=basket.getBallList();
         Assertions.assertEquals(expectedBalls, actualBalls);
     }
-
 }

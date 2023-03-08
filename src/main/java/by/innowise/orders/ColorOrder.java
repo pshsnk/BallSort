@@ -1,4 +1,4 @@
-package by.innowise.enums;
+package by.innowise.orders;
 
 public enum ColorOrder {
     RED,

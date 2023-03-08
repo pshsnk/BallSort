@@ -1,4 +1,4 @@
-package by.innowise.enums;
+package by.innowise.orders;
 
 import by.innowise.models.*;
 import java.util.HashMap;

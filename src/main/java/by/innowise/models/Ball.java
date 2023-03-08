@@ -1,6 +1,6 @@
 package by.innowise.models;
 
-import by.innowise.enums.ColorOrder;
+import by.innowise.orders.ColorOrder;
 import java.util.Objects;
 
 public abstract class Ball {
