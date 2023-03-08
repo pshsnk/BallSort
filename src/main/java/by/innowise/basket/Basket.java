@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 
 public class Basket {
-    private ArrayList<Ball> balls = new ArrayList<>();
+    private ArrayList<Ball> balls;
 
     public Basket(){
-
+        balls=new ArrayList<>();
     }
 
     public void addBall(Ball ball) {
