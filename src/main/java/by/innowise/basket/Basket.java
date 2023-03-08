@@ -1,8 +1,8 @@
 package by.innowise.basket;
 
-import by.innowise.balls.Ball;
+import by.innowise.models.Ball;
 import by.innowise.enums.ClassOrder;
-import by.innowise.sort.Sorter;
+import by.innowise.services.SortService;
 import java.util.ArrayList;
 
 
@@ -28,19 +28,19 @@ public class Basket {
     }
 
     public void mergeSortByPrice(){
-        Sorter.mergeSortByField(balls, ball -> ball.getPrice());
+        SortService.mergeSortByField(balls, ball -> ball.getPrice());
     }
 
     public void mergeSortBySize(){
-        Sorter.mergeSortByField(balls, ball -> ball.getSize());
+        SortService.mergeSortByField(balls, ball -> ball.getSize());
     }
 
     public void mergeSortByClassType(){
-        Sorter.mergeSortByField(balls, ball -> ClassOrder.findByKey(ball.getClass()).ordinal());
+        SortService.mergeSortByField(balls, ball -> ClassOrder.findByKey(ball.getClass()).ordinal());
     }
 
     public void mergeSortByColor(){
-        Sorter.mergeSortByField(balls, ball -> ball.getColor().ordinal());
+        SortService.mergeSortByField(balls, ball -> ball.getColor().ordinal());
     }
 }
 

@@ -1,15 +1,15 @@
-package by.innowise.balls;
+package by.innowise.models;
 
-import by.innowise.enums.Color;
+import by.innowise.enums.ColorOrder;
 import java.util.Objects;
 
 public abstract class Ball {
 
     protected Integer price;
     protected Integer size;
-    protected Color color;
+    protected ColorOrder color;
 
-    public Ball(Integer size, Color color, Integer price) {
+    public Ball(Integer size, ColorOrder color, Integer price) {
         if (size == null || color == null || price == null) {
             throw new IllegalArgumentException("Field cannot be null");
         }
@@ -38,11 +38,11 @@ public abstract class Ball {
         this.size = size;
     }
 
-    public Color getColor() {
+    public ColorOrder getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(ColorOrder color) {
         if (color == null) {
             throw new IllegalArgumentException("Field cannot be null");
         }

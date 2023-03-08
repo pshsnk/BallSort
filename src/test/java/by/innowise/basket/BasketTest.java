@@ -1,7 +1,7 @@
 package by.innowise.basket;
 
-import by.innowise.balls.*;
-import by.innowise.enums.Color;
+import by.innowise.models.*;
+import by.innowise.enums.ColorOrder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,11 +22,11 @@ class BasketTest {
     @BeforeEach
     void setUp() {
         actualBalls = new ArrayList<>(Arrays.asList(
-                new FootballBall(12, Color.GREEN, 40),
-                new VolleyballBall(10, Color.ORANGE, 90),
-                new BasketballBall(25, Color.YELLOW, 35),
-                new TennisBall(22, Color.BLACK, 25),
-                new HandballBall(15, Color.PINK, 30)
+                new FootballBall(12, ColorOrder.GREEN, 40),
+                new VolleyballBall(10, ColorOrder.ORANGE, 90),
+                new BasketballBall(25, ColorOrder.YELLOW, 35),
+                new TennisBall(22, ColorOrder.BLACK, 25),
+                new HandballBall(15, ColorOrder.PINK, 30)
         ));
         basket.setBalls(actualBalls);
     }
@@ -35,11 +35,11 @@ class BasketTest {
     @Test
     void mergeSortByPrice() {
         ArrayList<Ball> expectedBalls = new ArrayList<>(Arrays.asList(
-                new TennisBall(22, Color.BLACK, 25),
-                new HandballBall(15, Color.PINK, 30),
-                new BasketballBall(25, Color.YELLOW, 35),
-                new FootballBall(12, Color.GREEN, 40),
-                new VolleyballBall(10, Color.ORANGE, 90)
+                new TennisBall(22, ColorOrder.BLACK, 25),
+                new HandballBall(15, ColorOrder.PINK, 30),
+                new BasketballBall(25, ColorOrder.YELLOW, 35),
+                new FootballBall(12, ColorOrder.GREEN, 40),
+                new VolleyballBall(10, ColorOrder.ORANGE, 90)
         ));
         basket.mergeSortByPrice();
         actualBalls=basket.getBalls();
@@ -49,11 +49,11 @@ class BasketTest {
     @Test
     void mergeSortBySize() {
         ArrayList<Ball> expectedBalls = new ArrayList<>(Arrays.asList(
-                new VolleyballBall(10, Color.ORANGE, 90),
-                new FootballBall(12, Color.GREEN, 40),
-                new HandballBall(15, Color.PINK, 30),
-                new TennisBall(22, Color.BLACK, 25),
-                new BasketballBall(25, Color.YELLOW, 35)
+                new VolleyballBall(10, ColorOrder.ORANGE, 90),
+                new FootballBall(12, ColorOrder.GREEN, 40),
+                new HandballBall(15, ColorOrder.PINK, 30),
+                new TennisBall(22, ColorOrder.BLACK, 25),
+                new BasketballBall(25, ColorOrder.YELLOW, 35)
         ));
         basket.mergeSortBySize();
         actualBalls=basket.getBalls();
@@ -63,11 +63,11 @@ class BasketTest {
     @Test
     void mergeSortByClassType() {
         ArrayList<Ball> expectedBalls = new ArrayList<>(Arrays.asList(
-                new BasketballBall(25, Color.YELLOW, 35),
-                new FootballBall(12, Color.GREEN, 40),
-                new HandballBall(15, Color.PINK, 30),
-                new TennisBall(22, Color.BLACK, 25),
-                new VolleyballBall(10, Color.ORANGE, 90)
+                new BasketballBall(25, ColorOrder.YELLOW, 35),
+                new FootballBall(12, ColorOrder.GREEN, 40),
+                new HandballBall(15, ColorOrder.PINK, 30),
+                new TennisBall(22, ColorOrder.BLACK, 25),
+                new VolleyballBall(10, ColorOrder.ORANGE, 90)
 
         ));
         basket.mergeSortByClassType();
@@ -78,11 +78,11 @@ class BasketTest {
     @Test
     void mergeSortByColor() {
         ArrayList<Ball> expectedBalls = new ArrayList<>(Arrays.asList(
-                new TennisBall(22, Color.BLACK, 25),
-                new BasketballBall(25, Color.YELLOW, 35),
-                new FootballBall(12, Color.GREEN, 40),
-                new HandballBall(15, Color.PINK, 30),
-                new VolleyballBall(10, Color.ORANGE, 90)
+                new TennisBall(22, ColorOrder.BLACK, 25),
+                new BasketballBall(25, ColorOrder.YELLOW, 35),
+                new FootballBall(12, ColorOrder.GREEN, 40),
+                new HandballBall(15, ColorOrder.PINK, 30),
+                new VolleyballBall(10, ColorOrder.ORANGE, 90)
 
         ));
         basket.mergeSortByColor();

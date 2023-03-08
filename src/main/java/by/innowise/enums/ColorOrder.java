@@ -1,8 +1,6 @@
 package by.innowise.enums;
 
-import by.innowise.balls.TennisBall;
-
-public enum Color {
+public enum ColorOrder {
     RED,
     BLACK,
     BLUE,

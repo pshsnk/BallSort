@@ -1,10 +1,10 @@
-package by.innowise.sort;
+package by.innowise.services;
 
-import by.innowise.balls.Ball;
+import by.innowise.models.Ball;
 import java.util.ArrayList;
 import java.util.function.Function;
 
-public class Sorter {
+public class SortService {
     public static void mergeSortByField(ArrayList<Ball> array, Function<Ball, Integer> field) {
         if (array.size() > 1) {
             ArrayList<Ball> leftPart = new ArrayList<>(array.subList(0, array.size()/2));
@@ -36,7 +36,8 @@ public class Sorter {
         }
     }
 
-    private static void mergeByField(ArrayList<Ball> array, ArrayList<Ball> leftArr, ArrayList<Ball> rightArr, Function<Ball, Integer> field) {
+    private static void mergeByField(ArrayList<Ball> array, ArrayList<Ball> leftArr, ArrayList<Ball> rightArr,
+                                     Function<Ball, Integer> field) {
         int leftIndex = 0;
         int rightIndex = 0;
         int arrIndex = 0;

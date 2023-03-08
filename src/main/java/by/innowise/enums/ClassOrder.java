@@ -1,6 +1,6 @@
 package by.innowise.enums;
 
-import by.innowise.balls.*;
+import by.innowise.models.*;
 import java.util.HashMap;
 import java.util.Map;
 
