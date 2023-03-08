@@ -42,5 +42,21 @@ public class Basket {
     public void mergeSortByColor(){
         SortService.mergeSortByField(balls, ball -> ball.getColor().ordinal());
     }
+
+    public void quickSortByPrice(){
+        SortService.quickSortByField(balls, 0, balls.size()-1, ball -> ball.getPrice());
+    }
+
+    public void quickSortBySize(){
+        SortService.quickSortByField(balls, 0, balls.size()-1, ball -> ball.getSize());
+    }
+
+    public void quickSortByClassType(){
+        SortService.quickSortByField(balls, 0, balls.size()-1, ball -> ClassOrder.findByKey(ball.getClass()).ordinal());
+    }
+
+    public void quickSortByColor(){
+        SortService.quickSortByField(balls, 0, balls.size()-1, ball -> ball.getColor().ordinal());
+    }
 }
 
