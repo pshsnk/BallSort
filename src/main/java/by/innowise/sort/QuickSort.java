@@ -1,7 +1,6 @@
-package by.innowise.services;
+package by.innowise.sort;
 
 import by.innowise.models.Ball;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;

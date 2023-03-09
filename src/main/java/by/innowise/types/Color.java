@@ -1,6 +1,6 @@
-package by.innowise.orders;
+package by.innowise.types;
 
-public enum ColorOrder {
+public enum Color {
     RED,
     BLACK,
     BLUE,

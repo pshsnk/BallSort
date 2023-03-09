@@ -1,7 +1,6 @@
-package by.innowise.services;
+package by.innowise.sort;
 
 import by.innowise.models.Ball;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -13,18 +12,8 @@ public class MergeSort {
             ArrayList<Ball> leftPart = new ArrayList<>(array.subList(0, array.size()/2));
             ArrayList<Ball> rightPart = new ArrayList<>(array.subList(array.size()/2, array.size()));
 
-            Thread leftThread = new Thread(){
-                @Override
-                public void run() {
-                    mergeSortByField(leftPart, field);
-                }
-            };
-            Thread rightThread = new Thread() {
-                @Override
-                public void run() {
-                    mergeSortByField(rightPart, field);
-                }
-            };
+            Thread leftThread = new Thread(() -> mergeSortByField(leftPart, field));
+            Thread rightThread = new Thread(() -> mergeSortByField(rightPart, field));
             leftThread.start();
             rightThread.start();
 

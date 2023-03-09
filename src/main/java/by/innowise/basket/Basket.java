@@ -1,7 +1,6 @@
 package by.innowise.basket;
 
 import by.innowise.models.Ball;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +12,11 @@ public class Basket {
         ballList =new ArrayList<>();
     }
 
-    public void addBall(Ball ball) {
-        if(ball!=null)
-        ballList.add(ball);
+    public Ball addBall(Ball ball) {
+        if(ball!=null) {
+            ballList.add(ball);
+        }
+        return null;
     }
 
     public List<Ball> getBallList() {
@@ -23,8 +24,9 @@ public class Basket {
     }
 
     public void setBallList(List<Ball> ballList) {
-        if(ballList !=null)
-        this.ballList = ballList;
+        if(ballList !=null) {
+            this.ballList = ballList;
+        }
     }
 }
 

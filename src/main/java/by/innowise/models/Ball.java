@@ -1,21 +1,25 @@
 package by.innowise.models;
 
-import by.innowise.orders.ColorOrder;
+import by.innowise.types.BallType;
+import by.innowise.types.Color;
 import java.util.Objects;
 
-public abstract class Ball {
+public class Ball {
 
-    protected Integer price;
-    protected Integer size;
-    protected ColorOrder color;
+    private Integer price;
+    private Integer size;
+    private Color color;
+    private BallType classOrder;
 
-    public Ball(Integer size, ColorOrder color, Integer price) {
-        if (size == null || color == null || price == null) {
+
+    public Ball(Integer size, Color color, Integer price, BallType classOrder) {
+        if (size == null || color == null || price == null || classOrder == null) {
             throw new IllegalArgumentException("Field cannot be null");
         }
             this.size = size;
             this.color = color;
             this.price = price;
+            this.classOrder=classOrder;
     }
 
     public Integer getPrice() {return price;}
@@ -38,15 +42,23 @@ public abstract class Ball {
         this.size = size;
     }
 
-    public ColorOrder getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(ColorOrder color) {
+    public void setColor(Color color) {
         if (color == null) {
             throw new IllegalArgumentException("Field cannot be null");
         }
         this.color = color;
+    }
+
+    public BallType getClassOrder() {
+        return classOrder;
+    }
+
+    public void setClassOrder(BallType classOrder) {
+        this.classOrder = classOrder;
     }
 
     @Override
